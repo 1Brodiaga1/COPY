@@ -383,7 +383,7 @@ def find_similar_images(source_image_path, dataset_folder, output_folder, num_si
 
 
 if __name__ == "__main__":
-    source_image = "uploads/"
+    source_image = "uploads/1.jpg"
     dataset_folder = "train_data_rkn/dataset"
     output_folder = "similar_images/"
     cache_dir = "feature_cache/"  # Директория для кэша
