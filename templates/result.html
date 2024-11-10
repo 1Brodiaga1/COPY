@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Отображение изображения</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <style> body { /* Установка фонового изображения */ background-image: url("{{ url_for('static', filename='image/back.png') }}"); background-size: cover; background-repeat: no-repeat; height: 100vh; /* Высота страницы */ } </style>
+</head>
+<body>
+    <h1>Загруженное изображение</h1>
+    <span class="start-image"><img class="first-image" src="{{url_for('static', filename='uploads/1.jpg')}}"></span>
+    <div class="container">
+        <!-- Карточки -->
+        <div id="cards-container">
+            {% for card in cards %}
+                <div class="card">{{ card }}</div>
+            {% endfor %}
+        </div>
+        <!-- Кнопка для добавления новых карточек -->
+        <button id="load-more-button">Ещё</button>
+    </div>
+    <script src="{{url_for('static', filename='js/script.js')}}"></script>
+</body>
+</html>

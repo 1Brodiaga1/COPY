@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Копи</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <style> body { /* Установка фонового изображения */ background-image: url("{{ url_for('static', filename='image/back.png') }}"); background-size: cover; background-repeat: no-repeat; height: 100vh; /* Высота страницы */ } </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Загрузите фото</h1>
+        <!-- <form id="uploadForm" method="post" action="/upload" enctype="multipart/form-data">
+            <label for="photoUpload" class="upload-label">
+                <span class="span-img"><img class="load-image" src="{{url_for('static', filename='image/load.png')}}" /></span>
+                <input type="file" id="photoUpload" name="photo" accept="image/*">
+                <p id="name-photo"></p>
+            </label>
+            <button class="upload-button" type="submit" >Загрузить</button>
+        </form> -->
+        <form id="uploadForm" action="/upload" method="POST" enctype="multipart/form-data">
+            <label for="photoUpload" class="upload-label">
+                <span class="span-img"><img class="load-image" src="{{url_for('static', filename='image/load.png')}}" /></span>
+                <input type="file" id="photoUpload" name="photo" accept="image/*">
+                <p id="name-photo"></p>
+            </label>
+            <button class="upload-button" type="submit" >Загрузить</button>
+        </form>
+        <div id="results"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+ 
